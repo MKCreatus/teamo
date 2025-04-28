@@ -16,7 +16,6 @@ const keys = {};
 window.addEventListener('keydown', (e) => {
   keys[e.key] = true;
 });
-
 window.addEventListener('keyup', (e) => {
   keys[e.key] = false;
 });
@@ -64,8 +63,15 @@ function gameLoop() {
   requestAnimationFrame(gameLoop);
 }
 
-esposaImg.onload = () => {
-  voceImg.onload = () => {
+// 👉 Esperar as duas imagens carregarem antes de iniciar o jogo
+let imagensCarregadas = 0;
+
+function checkImagesLoaded() {
+  imagensCarregadas++;
+  if (imagensCarregadas === 2) {
     gameLoop();
   }
-};
+}
+
+esposaImg.onload = checkImagesLoaded;
+voceImg.onload = checkImagesLoaded;
