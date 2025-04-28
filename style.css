@@ -1,30 +1,33 @@
+/* Estilos gerais */
 body {
   margin: 0;
   overflow: hidden;
   background: white;
 }
 
+/* Área do jogo */
 #gameCanvas {
   display: block;
   background: white;
 }
 
+/* Mensagem de vitória */
 #message {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(255, 192, 203, 0.8);
+  background: rgba(255, 192, 203, 0.8); /* fundo rosa claro */
   color: red;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 3em;
   z-index: 10;
-  /* 🚫 REMOVE ESSA LINHA: display: flex; */
 }
 
+/* Classe que esconde a mensagem */
 .hidden {
   display: none;
 }
